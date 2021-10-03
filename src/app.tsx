@@ -4,9 +4,10 @@ import $ from 'jquery'
 import { Book, Review } from './app.d'
 import createBookReview from './createBookReview'
 import appendBook from './appendBook'
+import Timeline from './Timeline'
 
 const root = document.getElementById('react-root');
-ReactDom.render(<h1>React で描画する</h1>, root)
+ReactDom.render(<Timeline />, root)
 
 $(function () {
   $.ajax('http://localhost:1323/books')
