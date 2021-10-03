@@ -28,4 +28,8 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    contentBase: __dirname,
+    port: 5000,
+  },
 };
