@@ -1,18 +1,4 @@
-type Book = {
-  id: number,
-  title: string,
-  author: string,
-  overview: string,
-  image: string,
-  reviews: Review[],
-}
-
-type Review = {
-  id: number,
-  username: string,
-  comment: string,
-  like: number,
-}
+import { Book } from './app.d'
 
 export default function appendBook(book: Book) {
   $('#js-book-list').append($(

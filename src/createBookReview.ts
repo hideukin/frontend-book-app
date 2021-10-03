@@ -1,9 +1,4 @@
-type Review = {
-  id: number,
-  username: string,
-  comment: string,
-  like: number,
-}
+import { Review } from './app.d'
 
 export default function createBookReview(review: Review) {
   return (
