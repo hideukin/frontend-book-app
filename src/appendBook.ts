@@ -1,7 +1,8 @@
 import { Book } from './app.d'
+import createBookReview from './createBookReview'
 
 export default function appendBook(book: Book) {
-  $('#js-book-list').append($(
+  return (
     '<li class="book-list__item">' +
       '<div class="book-list__item__inner">' +
         '<img class="book-list__item__inner__image" src="' + book.image + '" alt="' + book.title + '">' +
@@ -26,5 +27,5 @@ export default function appendBook(book: Book) {
         '</form>' +
       '</div>' +
     '</li>'
-  ))
+  )
 }

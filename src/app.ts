@@ -1,11 +1,12 @@
 import $ from 'jquery'
+import { Book, Review } from './app.d'
 import createBookReview from './createBookReview'
 import appendBook from './appendBook'
 
 $(function () {
   $.ajax('http://localhost:1323/books')
-    .done(function(books) {
-      books.forEach(appendBook)
+    .done(function(books: Book[]) {
+      books.forEach(book => $('#js-book-list').append($(appendBook(book))))
 
       $('.js-toggle-review').on('click', function(event) {
         var bookId = $(this).data('bookId')
@@ -30,7 +31,7 @@ $(function () {
           data: {
             comment: $(event.currentTarget).find('textarea').val()
           }
-        }).done(function(review) {
+        }).done(function(review: Review) {
           $('.js-review[data-book-id="' + bookId + '"] > ul').append($(createBookReview(review)))
         })
 
