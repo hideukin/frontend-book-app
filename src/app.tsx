@@ -3,7 +3,7 @@ import ReactDom from 'react-dom'
 import $ from 'jquery'
 import { Book, Review } from './app.d'
 import createBookReview from './createBookReview'
-import appendBook from './appendBook'
+import BookList from './BookList'
 import Timeline from './Timeline'
 
 const root = document.getElementById('react-root');
@@ -12,7 +12,7 @@ ReactDom.render(<Timeline />, root)
 $(function () {
   $.ajax('http://localhost:1323/books')
     .done(function(books: Book[]) {
-      books.forEach(book => $('#js-book-list').append($(appendBook(book))))
+      books.forEach(book => $('#js-book-list').append($(BookList(book))))
 
       $('.js-toggle-review').on('click', function(event) {
         var bookId = $(this).data('bookId')

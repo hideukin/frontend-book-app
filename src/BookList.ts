@@ -1,7 +1,7 @@
 import { Book } from './app.d'
 import createBookReview from './createBookReview'
 
-export default function appendBook(book: Book) {
+export default function BookList(book: Book) {
   return (
     '<li class="book-list__item">' +
       '<div class="book-list__item__inner">' +
